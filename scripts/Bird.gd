@@ -82,3 +82,4 @@ func die():
 		hit_snd.play()
 	alive = false
 	anim.playing = false
+	particles.set_emitting(false)

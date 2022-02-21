@@ -17,7 +17,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
-velocity = Vector2( 200, 0 )
+velocity = Vector2( 125, 0 )
 
 [node name="sprite_upper" type="Sprite" parent="."]
 position = Vector2( 0, -106 )

@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assests/flappy bird - sprites/messages.png" type="Texture" id=1]
 [ext_resource path="res://ui/Menu.gd" type="Script" id=2]
 [ext_resource path="res://ui/flappy_font.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 1, 0.6, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0, 0, 1 )
 
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -66,8 +78,20 @@ margin_top = 42.0
 margin_right = 119.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
 text = "Restart"
+
+[node name="Button" type="Button" parent="Game_Over_menu/VBoxContainer"]
+margin_top = 69.0
+margin_right = 119.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+text = "QUIT"
 
 [node name="Tween" type="Tween" parent="."]
 
 [connection signal="pressed" from="Game_Over_menu/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Game_Over_menu/VBoxContainer/Button" to="." method="_on_Button_pressed"]
